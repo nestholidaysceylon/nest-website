@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nest Holidays Ceylon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="video-container">
+        <!-- Video Background -->
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          id="hero-video"
+          poster="/api/placeholder/1920/1080"
+        >
+          <!-- Add your video sources here -->
+          <source src="assets/videos/hero-background.mp4" type="video/mp4" />
+          <!-- Fallback image if video doesn't load -->
+          <img src="/api/placeholder/1920/1080" alt="Resort view" />
+        </video>
+        <!-- Overlay for better text readability -->
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Existing hero content -->
+      <a href="#contact" class="book-now">BOOK NOW</a>
+      <img
+        src="assets/images/lotus-logo.svg"
+        alt="Nest Holidays Logo"
+        class="logo"
+      />
+      <p class="welcome-text">WELCOME TO</p>
+      <h1 class="hotel-name">Nest Holidays</h1>
+      <p class="hotel-type">RESORT & SPA HOTEL</p>
+      <a href="#welcome" class="cta-button">Learn More</a>
+    </section>
+
+    <section class="welcome-section" id="welcome">
+      <div class="welcome-content">
+        <h2 class="welcome-title">
+          Welcome to your luxurious home away from home
+        </h2>
+        <p class="welcome-description">
+          Welcome to a luxurious escape in Sri Lanka, where the stunning shores
+          of Galle and Nilaveli offer a perfect blend of comfort and serenity.
+          In Galle, the hotel combines colonial charm with modern elegance,
+          featuring teak floors, antique furnishings, and lush gardens. The
+          infinity pool offers breathtaking views of the Indian Ocean, while
+          private terraces provide a peaceful retreat. In Nilaveli, minimalist
+          design and natural elements create a tranquil beachside haven, with
+          pristine sands and spectacular sunsets. Experience world-class
+          hospitality, rejuvenating spa treatments, and unforgettable local
+          excursions in this coastal paradise.
+        </p>
+      </div>
+      <img
+        src="assets/images/image-family.jpg"
+        alt="Family enjoying tea at resort"
+        class="welcome-image"
+      />
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations-section">
+      <div class="location-card nilaveli">
+        <h2>NILAVELI</h2>
+        <a href="nilaveli.html" class="see-more"
+          >see more <i class="fa-solid fa-chevron-right"></i
+        ></a>
+      </div>
+      <div class="location-card galle">
+        <h2>GALLE</h2>
+        <a href="galle.html" class="see-more"
+          >see more <i class="fa-solid fa-chevron-right"></i
+        ></a>
+      </div>
+    </section>
+
+    <section class="reviews-section">
+      <h2>Reviews</h2>
+      <div class="reviews-container">
+        <div class="review-card">
+          <p class="review-text">
+            Nilaveli Hotel offers a stunning location, stylish rooms, and
+            exceptional service. The fresh seafood, breathtaking views, and
+            peaceful atmosphere make it the perfect getaway. Highly recommended!
+          </p>
+          <p class="reviewer">Santa Solana</p>
+        </div>
+
+        <div class="review-card featured">
+          <p class="review-text">
+            Nilaveli Hotel is a true gem, with beautiful beachfront views,
+            spacious rooms, and excellent service. The fresh seafood and
+            relaxing atmosphere make it an ideal escape. Highly recommended!
+          </p>
+          <p class="reviewer">Mariana's Luxe Travels</p>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">
+            Galle blends history and beauty, with colonial-style rooms and
+            stunning ocean views. The hotel offers a relaxing atmosphere,
+            excellent food, and a perfect location for exploring.
+          </p>
+          <p class="reviewer">Fairhill Journal</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+
+      <div class="contact-container">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Full Name</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=" "
+              required
+            />
+            <label for="email">Email Address</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder=" "
+              required
+            />
+            <label for="phone">Phone Number</label>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              placeholder=" "
+              required
+            ></textarea>
+            <label for="message">Your Message</label>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-column">
+          <h3>Nest Holidays Ceylon</h3>
+          <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <p>31 Outram St</p>
+              <p>Sutton-in-Ashfield</p>
+              <p>NG17 4BA</p>
+            </div>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <div>
+              <p>01623 553540</p>
+              <p>+447878O8772</p>
+            </div>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>nestholidaysceylon@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Office Hours</h3>
+          <div class="time-block">
+            <p>Monday to Friday</p>
+            <p>8:00 am to 5:00 pm</p>
+          </div>
+          <div class="time-block">
+            <p>Saturday</p>
+            <p>8:00 am to 5:00 pm</p>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Get Social</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61572519737574"
+              class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://x.com/NestHolidaysLK" class="social-icon"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/nestholidaysceylon/"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <a
+            href="https://www.instagram.com/nestholidaysceylon/"
+            class="follow-btn"
+            >Follow Us</a
+          >
+        </div>
+      </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="contact.js"></script>
+  </body>
+</html>

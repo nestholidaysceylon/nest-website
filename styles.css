@@ -1,0 +1,1192 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Section Styles */
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #efdfbb;
+  text-align: center;
+  overflow: hidden; /* Prevent video overflow */
+}
+
+/* Video container styles */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Video element styles */
+#hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* For Safari */
+}
+
+/* Overlay for better text readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+}
+
+.logo {
+  width: 50px;
+  margin-bottom: 4rem;
+}
+
+.welcome-text {
+  font-size: 1.8rem;
+  color: #efdfbb;
+  letter-spacing: 0.3em;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hotel-name {
+  font-size: 8rem;
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.hotel-type {
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 3rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cta-button {
+  padding: 1.2rem 3rem;
+  border: 1px solid #efdfbb;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px); /* Adds blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari support */
+  color: #efdfbb;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cta-button:hover {
+  background: #efdfbb;
+  color: black;
+}
+
+.book-now {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-family: "Italiana", serif;
+  font-size: 1.4rem;
+  color: #efdfbb;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.book-now:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+  padding: 8rem 8rem; /* Increased padding */
+  background-color: #efdfbb;
+  display: flex;
+  align-items: center;
+  gap: 6rem; /* Increased gap */
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-content {
+  flex: 1;
+  padding-right: 2rem; /* Add space between text and image */
+}
+
+.welcome-title {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
+  color: #473201;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  position: relative; /* For decorative elements */
+}
+
+.welcome-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -20px;
+  width: 80px;
+  height: 3px;
+  background-color: #473201;
+}
+
+.welcome-description {
+  font-family: "Besley", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #473201;
+  font-style: italic;
+  padding-left: 2rem; /* Add space for border */
+  border-left: 3px solid rgba(71, 50, 1, 0.2); /* Subtle left border */
+}
+
+.welcome-image {
+  flex: 1;
+  max-width: 50%;
+  height: 500px; /* Increased height */
+  object-fit: cover;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+.welcome-image:hover {
+  transform: scale(1.02); /* Subtle zoom on hover */
+}
+
+/* Locations Section Styles */
+.locations-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.location-card {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.5s ease;
+  overflow: hidden;
+}
+
+.location-card:hover {
+  flex: 1.2;
+}
+
+.location-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.nilaveli {
+  background-image: url("assets/images/nilaveli.jpg");
+  background-color: #4a5d4c; /* Keep as fallback */
+  background-size: cover;
+  background-position: center;
+}
+
+.galle {
+  background-image: url("assets/images/galle.jpg");
+  background-color: #3e7c99; /* Keep as fallback */
+  background-size: cover;
+  background-position: center;
+}
+
+.location-card h2 {
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 8rem;
+  position: relative;
+  z-index: 2;
+}
+
+.see-more {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  /* Add glassmorphism styles */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.see-more i {
+  margin-left: 8px;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+/* Update hover effects */
+.see-more:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.see-more:hover i {
+  transform: translateX(8px);
+}
+
+/* Reviews Section Styles */
+.reviews-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("assets/images/image-reviews.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.reviews-section h2 {
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review-card {
+  background: rgba(230, 213, 184, 0.9);
+  padding: 2rem;
+  border-radius: 4px;
+  max-width: 400px;
+  color: #473201;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+}
+
+.review-card.featured {
+  max-width: 450px;
+}
+
+.review-text {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.reviewer {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+/* Contact Section and Footer Styles */
+.contact-section {
+  background-color: #392114;
+  color: #fff4ee;
+  padding: 6rem 2rem;
+}
+
+.contact-section h2 {
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 244, 238, 0.5);
+  color: #fff4ee;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: rgba(255, 244, 238, 0.7);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #fff4ee;
+  outline: none;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  color: #fff4ee;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #fff4ee;
+  color: #392114;
+  border: none;
+  border-radius: 4px;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: white;
+}
+
+/* Footer Styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  padding: 2rem;
+  border: 1px solid rgba(255, 244, 238, 0.2);
+  border-radius: 4px;
+}
+
+.footer-column h3 {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column p {
+  margin-bottom: 0.5rem;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info i {
+  width: 20px;
+}
+
+.footer-column .time-block {
+  margin-bottom: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 244, 238, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff4ee;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: white;
+  color: #583e2e;
+}
+
+.follow-btn {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid rgba(255, 244, 238, 0.2);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.follow-btn:hover {
+  background: white;
+  color: #583e2e;
+}
+
+/* All Media Queries */
+/* Extra Large Screens */
+@media (min-width: 1400px) {
+  /* Hero Section */
+  .hotel-name {
+    font-size: 10rem;
+  }
+  .welcome-text {
+    font-size: 2rem;
+  }
+  .hotel-type {
+    font-size: 2.2rem;
+  }
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Large Screens */
+@media (max-width: 1200px) {
+  /* Hero Section */
+  .hotel-name {
+    font-size: 6rem;
+  }
+  .welcome-text {
+    font-size: 1.6rem;
+  }
+  .hotel-type {
+    font-size: 1.8rem;
+  }
+
+  .location-card h2 {
+    font-size: 6rem;
+  }
+
+  /* Reviews Section */
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .review-card {
+    max-width: 600px;
+    width: 100%;
+  }
+  .review-card.featured {
+    max-width: 600px;
+  }
+}
+
+/* Medium Screens */
+@media (max-width: 1024px) {
+  /* Welcome Section */
+  .welcome-section {
+    padding: 6rem 4rem;
+    gap: 4rem;
+    flex-direction: column;
+  }
+  .welcome-content {
+    padding-right: 0;
+  }
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+  .welcome-image {
+    max-width: 100%; /* Allow full width on smaller screens */
+    width: 100%;
+    height: 400px; /* Maintain height on medium screens */
+  }
+
+  .location-card h2 {
+    font-size: 5rem;
+  }
+
+  .see-more {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+/* Tablets & Smaller Screens */
+@media (max-width: 768px) {
+  /* Hero Section */
+  #hero-video {
+    width: 100%;
+    height: 100%;
+  }
+  .hotel-name {
+    font-size: 4rem;
+  }
+  .welcome-text {
+    font-size: 1.4rem;
+  }
+  .hotel-type {
+    font-size: 1.6rem;
+  }
+  .cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+  .book-now {
+    font-size: 1.2rem;
+  }
+
+  /* Welcome Section */
+  .welcome-section {
+    padding: 4rem 2rem;
+  }
+
+  .welcome-image {
+    height: 350px;
+  }
+
+  .welcome-title {
+    font-size: 2.8rem;
+  }
+  .welcome-title::before {
+    width: 60px; /* Smaller decorative line */
+  }
+
+  .welcome-description {
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+
+  /* Locations Section */
+  .locations-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .location-card {
+    height: 60vh; /* Taller cards on mobile */
+    padding: 2.5rem;
+  }
+  .location-card h2 {
+    font-size: 4rem;
+  }
+  .location-card:hover {
+    flex: 1; /* Disable flex growth on mobile */
+  }
+
+  /* Reviews Section */
+  .reviews-section {
+    padding: 3rem 1rem;
+  }
+  .reviews-section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .review-text {
+    font-size: 1rem;
+  }
+
+  /* Footer Section */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-column {
+    margin-bottom: 2rem;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .contact-section h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  /* Hero Section */
+  .hotel-name {
+    font-size: 3rem;
+  }
+  .welcome-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .hotel-type {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+  .logo {
+    width: 40px; /* Smaller logo for mobile */
+    margin-bottom: 2rem;
+  }
+  .book-now {
+    font-size: 1rem;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  /* Welcome Section */
+  .welcome-title {
+    font-size: 2rem;
+  }
+  .welcome-description {
+    font-size: 1rem;
+  }
+  .welcome-image {
+    height: 250px; /* Even smaller height for mobile */
+  }
+
+  /* Location Cards */
+  .location-card {
+    height: 50vh;
+    padding: 2rem;
+  }
+  .location-card h2 {
+    font-size: 3rem;
+  }
+  .see-more {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  /* Contact Section */
+  .contact-section h2 {
+    font-size: 2.5rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  /* Hero Section */
+  .hero {
+    padding: 2rem 0;
+  }
+  .hotel-name {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  .welcome-text,
+  .hotel-type {
+    margin-bottom: 1rem;
+  }
+  .logo {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Support for Very Small Devices */
+@media (max-width: 320px) {
+  /* Hero Section */
+  .hotel-name {
+    font-size: 2.5rem;
+  }
+  .welcome-text {
+    font-size: 1rem;
+  }
+  .hotel-type {
+    font-size: 1rem;
+  }
+
+  .location-card {
+    height: 40vh;
+    padding: 1.5rem;
+  }
+
+  .location-card h2 {
+    font-size: 2.5rem;
+  }
+
+  .see-more {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  /* All Sections */
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Accommodations Page Specific Styles */
+.accommodations-hero {
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/images/nilaveli.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.galle-hero {
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("assets/images/galle-banner.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Home Navigation Button */
+.home-nav-simple {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: "Raleway", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #efdfbb;
+  text-decoration: none;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(239, 223, 187, 0.5);
+  padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+.home-nav-simple i {
+  font-size: 0.9rem;
+}
+
+.home-nav-simple:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .home-nav-simple span {
+    display: none;
+  }
+
+  .home-nav-simple {
+    padding: 0.5rem;
+  }
+
+  .home-nav-simple i {
+    font-size: 1.2rem;
+  }
+}
+
+.accommodations-title {
+  color: #efdfbb;
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.accommodations-intro {
+  background-color: #efdfbb;
+  padding: 5rem 8rem;
+  text-align: center;
+}
+
+.accommodations-intro h2 {
+  font-family: "Playfair Display", serif;
+  color: #473201;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.accommodations-intro h2::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: -15px;
+  width: 50%;
+  height: 2px;
+  background-color: #473201;
+}
+
+.accommodations-intro p {
+  font-family: "Besley", serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #473201;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.room-types-section {
+  padding: 5rem 8rem;
+  background-color: #fffbf4;
+}
+
+.room-type {
+  display: flex;
+  margin-bottom: 8rem;
+  position: relative;
+}
+
+.room-type:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.room-image {
+  flex: 1;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.room-type:hover .room-image img {
+  transform: scale(1.05);
+}
+
+.room-details {
+  flex: 1;
+  background-color: #f8f2e5;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.room-name {
+  font-family: "Raleway", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #473201;
+  margin-bottom: 1.5rem;
+}
+
+.room-description {
+  font-family: "Besley", serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #473201;
+  margin-bottom: 2rem;
+}
+
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.room-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: "Raleway", serif;
+  font-size: 1rem;
+  color: #473201;
+  background-color: rgba(239, 223, 187, 0.5);
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+}
+
+.room-feature i {
+  color: #392114;
+}
+
+.book-room-btn {
+  font-family: "Raleway", serif;
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #392114;
+  color: #efdfbb;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.book-room-btn:hover {
+  background-color: #583e2e;
+  transform: translateY(-2px);
+}
+
+.banner-section-nilaveli {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/images/nilaveli.jpg") center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.banner-section-galle {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/images/galle.jpg") center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.banner-title {
+  font-family: "Italiana", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #efdfbb;
+  margin-bottom: 2rem;
+}
+
+.banner-text {
+  font-family: "Besley", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.banner-btn {
+  font-family: "Raleway", serif;
+  display: inline-block;
+  background: transparent;
+  color: #efdfbb;
+  border: 1px solid #efdfbb;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.banner-btn:hover {
+  background-color: #efdfbb;
+  color: #392114;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .room-types-section,
+  .accommodations-intro {
+    padding: 4rem 2rem;
+  }
+
+  .room-type {
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .room-type:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .room-details {
+    padding: 3rem 2rem;
+  }
+
+  .accommodations-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-features {
+    gap: 1rem;
+  }
+
+  .room-feature {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .accommodations-title {
+    font-size: 3.5rem;
+  }
+
+  .banner-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accommodations-intro h2 {
+    font-size: 2.2rem;
+  }
+
+  .room-types-section,
+  .accommodations-intro {
+    padding: 3rem 1.5rem;
+  }
+
+  .room-name {
+    font-size: 2.5rem;
+  }
+
+  .accommodations-title {
+    font-size: 3rem;
+  }
+}

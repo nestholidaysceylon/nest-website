@@ -1,0 +1,19 @@
+{
+  "name": "Nest Holidays Ceylon",
+  "short_name": "Nest Holidays",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#efdfbb",
+  "background_color": "#392114",
+  "display": "standalone"
+}
