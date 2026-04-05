@@ -1,0 +1,729 @@
+/* ============================================================
+   tour-styles.css
+   Shared stylesheet for all Nest Holidays Ceylon tour pages.
+   Link AFTER your main styles.css:
+     
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   HERO BANNER
+   Each tour page sets its own background
+   image via an inline style or a page-
+   specific class (see notes below).
+───────────────────────────────────────── */
+.tour-hero {
+  height: 60vh;
+  /* Default background — override per page with:
+     style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('assets/images/YOUR-IMAGE.jpg');"
+     OR add a page-specific class that sets background-image */
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("assets/images/sri-lanka-banner.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* ─────────────────────────────────────────
+   INTRODUCTION SECTION
+───────────────────────────────────────── */
+.tour-intro {
+  background-color: #efdfbb;
+  padding: 5rem 8rem;
+  text-align: center;
+}
+
+.tour-intro .intro-badge {
+  display: inline-block;
+  font-family: "Raleway", serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #473201;
+  border: 1px solid rgba(71, 50, 1, 0.3);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.tour-intro h2 {
+  font-family: "Playfair Display", serif;
+  color: #473201;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.tour-intro h2::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: -15px;
+  width: 50%;
+  height: 2px;
+  background-color: #473201;
+}
+
+.tour-intro p {
+  font-family: "Besley", serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #473201;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+
+/* ─────────────────────────────────────────
+   MAP PLACEHOLDER
+   Remove once you add your real map image
+───────────────────────────────────────── */
+.map-placeholder {
+  background-color: #f3ead8;
+  border: 2px dashed rgba(71, 50, 1, 0.3);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  margin: 3rem auto 0;
+  max-width: 800px;
+  text-align: center;
+  color: #473201;
+}
+
+.map-placeholder i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+  display: block;
+}
+
+.map-placeholder p {
+  font-family: "Raleway", serif;
+  font-style: normal;
+  font-size: 1rem;
+  opacity: 0.6;
+  padding-top: 0;
+  margin: 0 auto;
+}
+
+
+/* ─────────────────────────────────────────
+   ITINERARY SECTION
+───────────────────────────────────────── */
+.itinerary-section {
+  background-color: #fffbf4;
+  padding: 5rem 8rem;
+}
+
+.itinerary-section > h2 {
+  font-family: "Italiana", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #473201;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.itinerary-section > h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #473201;
+  margin: 1rem auto 0;
+}
+
+
+/* ─────────────────────────────────────────
+   DAY CARDS — TIMELINE
+───────────────────────────────────────── */
+.day-card {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* Vertical connecting line between cards */
+.day-card::before {
+  content: "";
+  position: absolute;
+  left: 3.5rem;
+  top: 5rem;
+  bottom: -4rem;
+  width: 1px;
+  background: rgba(71, 50, 1, 0.15);
+}
+
+.day-card:last-of-type::before {
+  display: none;
+}
+
+/* Day number column */
+.day-number-col {
+  flex-shrink: 0;
+  width: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.3rem;
+}
+
+/* Circular day badge */
+.day-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #392114;
+  color: #efdfbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.day-circle span:first-child {
+  font-family: "Raleway", serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.day-circle span:last-child {
+  font-family: "Italiana", serif;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+/* Day content card */
+.day-content {
+  flex: 1;
+  background-color: #f8f2e5;
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+}
+
+.day-location {
+  font-family: "Italiana", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #392114;
+  margin-bottom: 1rem;
+}
+
+/* Daily schedule list */
+.day-schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.day-schedule li {
+  font-family: "Raleway", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #392114;
+  padding: 0.35rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.day-schedule li i {
+  margin-top: 2px;
+  color: #583e2e;
+  flex-shrink: 0;
+}
+
+/* Day description paragraphs */
+.day-description {
+  font-family: "Besley", serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #473201;
+  margin-bottom: 1.5rem;
+}
+
+/* Image placeholder inside day cards
+   — remove the div and replace with <img> once you have photos */
+.day-img-placeholder {
+  background-color: #ede3cc;
+  border: 2px dashed rgba(71, 50, 1, 0.25);
+  border-radius: 8px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: #473201;
+  margin-bottom: 1.5rem;
+}
+
+.day-img-placeholder i {
+  font-size: 2rem;
+  opacity: 0.35;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.day-img-placeholder p {
+  font-family: "Raleway", serif;
+  font-size: 0.85rem;
+  opacity: 0.55;
+  margin: 0;
+}
+
+/* Overnight / stay badge */
+.overnight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Raleway", serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff4ee;
+  background-color: #583e2e;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+}
+
+
+/* ─────────────────────────────────────────
+   HOTELS PROPOSED TABLE SECTION
+───────────────────────────────────────── */
+.hotels-section {
+  background-color: #efdfbb;
+  padding: 5rem 8rem;
+}
+
+.hotels-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #473201;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.hotels-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #473201;
+  margin: 0.8rem auto 0;
+}
+
+.tour-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Raleway", serif;
+  background: #fff8ee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.tour-table thead {
+  background-color: #392114;
+  color: #efdfbb;
+}
+
+.tour-table thead th {
+  padding: 1.1rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.tour-table tbody tr {
+  border-bottom: 1px solid rgba(71, 50, 1, 0.1);
+  transition: background 0.2s ease;
+}
+
+.tour-table tbody tr:hover {
+  background-color: rgba(239, 223, 187, 0.4);
+}
+
+.tour-table tbody td {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #473201;
+  font-weight: 500;
+}
+
+.tour-table tbody td:last-child {
+  font-weight: 700;
+  color: #392114;
+}
+
+
+/* ─────────────────────────────────────────
+   PRICING SECTION
+───────────────────────────────────────── */
+.pricing-section {
+  background-color: #392114;
+  padding: 5rem 8rem;
+  color: #fff4ee;
+}
+
+.pricing-section h2 {
+  font-family: "Italiana", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pricing-validity {
+  font-family: "Raleway", serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(239, 223, 187, 0.75);
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-block {
+  background: rgba(255, 244, 238, 0.06);
+  border: 1px solid rgba(239, 223, 187, 0.2);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.pricing-block h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #efdfbb;
+}
+
+.pricing-block .validity-tag {
+  font-family: "Raleway", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(239, 223, 187, 0.6);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table tr {
+  border-bottom: 1px solid rgba(239, 223, 187, 0.15);
+}
+
+.price-table tr:last-child {
+  border-bottom: none;
+}
+
+.price-table td {
+  font-family: "Raleway", serif;
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  color: rgba(255, 244, 238, 0.9);
+}
+
+.price-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #efdfbb;
+}
+
+
+/* ─────────────────────────────────────────
+   INCLUSIONS & EXCLUSIONS SECTION
+───────────────────────────────────────── */
+.inclusions-section {
+  background-color: #fffbf4;
+  padding: 5rem 8rem;
+}
+
+.inclusions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.inclusions-block h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #473201;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.inclusions-block.include h2 {
+  border-left: 4px solid #392114;
+}
+
+.inclusions-block.exclude h2 {
+  border-left: 4px solid #b94a4a;
+}
+
+
+/* ─────────────────────────────────────────
+   NOTES SECTION
+───────────────────────────────────────── */
+.notes-section {
+  background-color: #f8f2e5;
+  padding: 4rem 8rem;
+}
+
+.notes-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #473201;
+  margin-bottom: 2rem;
+  border-left: 4px solid #392114;
+  padding-left: 1rem;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notes-list li {
+  font-family: "Besley", serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #473201;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background: #efdfbb;
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.notes-list li i {
+  color: #392114;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+
+/* ─────────────────────────────────────────
+   CALL TO ACTION BANNER
+   Override background-image per page the
+   same way as .tour-hero (see above)
+───────────────────────────────────────── */
+.tour-cta-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/images/nilaveli.jpg") center/cover no-repeat;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.tour-cta-banner h2 {
+  font-family: "Italiana", serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #efdfbb;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — LARGE SCREENS
+───────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .itinerary-section,
+  .hotels-section,
+  .pricing-section,
+  .inclusions-section,
+  .notes-section,
+  .tour-intro {
+    padding: 4rem 4rem;
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLETS
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .itinerary-section,
+  .hotels-section,
+  .pricing-section,
+  .inclusions-section,
+  .notes-section,
+  .tour-intro {
+    padding: 4rem 3rem;
+  }
+
+  .pricing-grid,
+  .inclusions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-intro h2 {
+    font-size: 2.4rem;
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — SMALL TABLETS & LARGE PHONES
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .itinerary-section,
+  .hotels-section,
+  .pricing-section,
+  .inclusions-section,
+  .notes-section,
+  .tour-intro {
+    padding: 3rem 1.5rem;
+  }
+
+  /* Stack day cards vertically */
+  .day-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .day-card::before {
+    display: none;
+  }
+
+  .day-number-col {
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .day-content {
+    padding: 1.8rem;
+  }
+
+  .day-location {
+    font-size: 1.8rem;
+  }
+
+  .tour-table thead th,
+  .tour-table tbody td {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tour-hero {
+    height: 50vh;
+  }
+
+  .tour-cta-banner {
+    height: auto;
+    padding: 4rem 2rem;
+  }
+
+  .tour-cta-banner h2 {
+    font-size: 2.5rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 2.8rem;
+  }
+
+  .itinerary-section > h2 {
+    font-size: 2.8rem;
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE PHONES
+───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .tour-intro h2 {
+    font-size: 2rem;
+  }
+
+  .itinerary-section > h2 {
+    font-size: 2.2rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .tour-cta-banner h2 {
+    font-size: 2rem;
+  }
+
+  .hotels-section h2 {
+    font-size: 2rem;
+  }
+
+  .day-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .day-circle span:last-child {
+    font-size: 1.5rem;
+  }
+
+  .day-location {
+    font-size: 1.6rem;
+  }
+
+  .notes-list li {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .pricing-block {
+    padding: 1.5rem;
+  }
+
+  .tour-table thead th,
+  .tour-table tbody td {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

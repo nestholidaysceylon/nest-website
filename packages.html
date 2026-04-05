@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Packages — Nest Holidays Ceylon</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+
+    /* ─── HERO ─── */
+    .packages-hero {
+      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("assets/images/SL_Banner2.jpg") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .packages-hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(239, 223, 187, 0.85);
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+
+    /* ─── INTRO STRIP ─── */
+    .packages-intro {
+      background-color: #efdfbb;
+      padding: 4rem 8rem;
+      text-align: center;
+    }
+
+    .packages-intro h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #473201;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .packages-intro h2::after {
+      content: "";
+      position: absolute;
+      left: 25%;
+      bottom: -12px;
+      width: 50%;
+      height: 2px;
+      background-color: #473201;
+    }
+
+    .packages-intro p {
+      font-family: "Besley", serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #473201;
+      max-width: 800px;
+      margin: 1.5rem auto 0;
+    }
+
+    /* ─── PACKAGES GRID ─── */
+    .packages-section {
+      background-color: #fffbf4;
+      padding: 5rem 8rem;
+    }
+
+    .packages-section > h2 {
+      font-family: "Italiana", serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #473201;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .packages-section > p.section-sub {
+      font-family: "Raleway", serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(71, 50, 1, 0.5);
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ─── PACKAGE CARD ─── */
+    .package-card {
+      background: #fff8ee;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(57, 33, 20, 0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(57, 33, 20, 0.14);
+    }
+
+    /* Card image area */
+    .card-image {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background-color: #c9b89a;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .package-card:hover .card-image img {
+      transform: scale(1.06);
+    }
+
+    /* Duration badge on the image */
+    .duration-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(57, 33, 20, 0.85);
+      backdrop-filter: blur(4px);
+      color: #efdfbb;
+      font-family: "Raleway", serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+    }
+
+    /* Image placeholder — remove once you add real photos */
+    .card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #d4c4a0, #b8a07a);
+      color: rgba(71, 50, 1, 0.45);
+      gap: 0.5rem;
+    }
+
+    .card-img-placeholder i {
+      font-size: 2.5rem;
+    }
+
+    .card-img-placeholder p {
+      font-family: "Raleway", serif;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    /* Card body */
+    .card-body {
+      padding: 2rem 2rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-family: "Italiana", serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #392114;
+      margin-bottom: 0.6rem;
+      line-height: 1.1;
+    }
+
+    /* Route stops */
+    .card-route {
+      font-family: "Raleway", serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: rgba(71, 50, 1, 0.6);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .card-route i {
+      color: #583e2e;
+      margin-right: 0.3rem;
+    }
+
+    /* Highlights list */
+    .card-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .card-highlights li {
+      font-family: "Besley", serif;
+      font-size: 0.92rem;
+      color: #473201;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .card-highlights li i {
+      color: #583e2e;
+      margin-top: 3px;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+    }
+
+    /* Price row */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(71, 50, 1, 0.12);
+      gap: 1rem;
+    }
+
+    .card-price {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-price .price-label {
+      font-family: "Raleway", serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(71, 50, 1, 0.5);
+    }
+
+    .card-price .price-value {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #392114;
+    }
+
+    .card-price .price-value span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: rgba(71, 50, 1, 0.55);
+    }
+
+    .view-btn {
+      font-family: "Raleway", serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #efdfbb;
+      background-color: #392114;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .view-btn:hover {
+      background-color: #583e2e;
+      transform: translateY(-2px);
+    }
+
+    /* ─── "MORE COMING SOON" CARD ─── */
+    .package-card.coming-soon {
+      border: 2px dashed rgba(71, 50, 1, 0.2);
+      box-shadow: none;
+      background: transparent;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      cursor: default;
+    }
+
+    .package-card.coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .coming-soon-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      gap: 1rem;
+      color: rgba(71, 50, 1, 0.4);
+    }
+
+    .coming-soon-inner i {
+      font-size: 2.5rem;
+    }
+
+    .coming-soon-inner h3 {
+      font-family: "Italiana", serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    .coming-soon-inner p {
+      font-family: "Raleway", serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.6;
+      max-width: 240px;
+    }
+
+    /* ─── CTA BANNER ─── */
+    .packages-cta {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("assets/images/nilaveli.jpg") center/cover no-repeat;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .packages-cta h2 {
+      font-family: "Italiana", serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #efdfbb;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .packages-section,
+      .packages-intro {
+        padding: 4rem 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .packages-section,
+      .packages-intro {
+        padding: 3rem 1.5rem;
+      }
+
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .packages-hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1.5rem;
+      }
+
+      .packages-intro h2 {
+        font-size: 2rem;
+      }
+
+      .packages-cta h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .view-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .packages-section > h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <section class="packages-hero">
+    <!-- IMAGE: Update background-image in .packages-hero CSS with your preferred banner photo.
+         Suggested: a wide Sri Lanka landscape — tea country, beach, or Sigiriya. -->
+    <a href="index.html" class="home-nav-simple">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Back to Home</span>
+    </a>
+    <h1 class="accommodations-title">Our Packages</h1>
+    <p class="packages-hero-subtitle">Carefully crafted journeys through the Pearl of the Indian Ocean</p>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       INTRO
+  ══════════════════════════════ -->
+  <section class="packages-intro">
+    <h2>Find Your Perfect Journey</h2>
+    <p>
+      Every package is tailored to give you an authentic, unhurried experience of Sri Lanka — from
+      ancient cities and misty hill country to golden beaches and wild national parks. Browse our
+      curated itineraries below, each including accommodation, transfers, and an English-speaking
+      chauffeur guide.
+    </p>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       PACKAGES GRID
+  ══════════════════════════════ -->
+  <section class="packages-section">
+    <h2>All Packages</h2>
+    <p class="section-sub">Select a package to view the full itinerary &amp; pricing</p>
+
+    <div class="packages-grid">
+
+      <!-- ── PACKAGE 1 — 13 Day ── -->
+      <div class="package-card">
+        <div class="card-image">
+          <!-- IMAGE: Replace this placeholder div with your photo once ready.
+               <img src="assets/images/SL_Banner2.jpg" alt="13-Day Sri Lanka Tour"> -->
+               
+          <img src="assets/images/package01_banner.jpeg" alt="13-Day Sri Lanka Tour">
+          <span class="duration-badge"><i class="fa-solid fa-calendar-days"></i>&nbsp; 13 Days · 12 Nights</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Classic Sri Lanka</h3>
+          <p class="card-route">
+            <i class="fa-solid fa-location-dot"></i>
+            Negombo · Dambulla · Sigiriya · Kandy · Ella · Yala · Bentota
+          </p>
+          <ul class="card-highlights">
+            <li><i class="fa-solid fa-circle fa-fw"></i> Pinnawala Elephant Orphanage</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Sigiriya Lion Rock (UNESCO)</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Minneriya Jeep Safari</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Yala National Park Safari</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Nine Arch Bridge, Ella</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Galle Fort (UNESCO) &amp; Bentota Beach</li>
+          </ul>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">From</span>
+              <span class="price-value">USD 1,320 <span>/ person</span></span>
+            </div>
+            <a href="tour-negombo-bentota.html" class="view-btn">View Package</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PACKAGE 2 — 15 Day ── -->
+      <div class="package-card">
+        <div class="card-image">
+          <!-- IMAGE: Replace this placeholder div with your photo once ready.
+               <img src="assets/images/package02_banner.jpeg" alt="15-Day Sri Lanka Tour"> -->
+          <img src="assets/images/package02_banner.jpeg" alt="15-Day Sri Lanka Tour">
+          <span class="duration-badge"><i class="fa-solid fa-calendar-days"></i>&nbsp; 15 Days · 14 Nights</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Grand Sri Lanka &amp; Beach Retreat</h3>
+          <p class="card-route">
+            <i class="fa-solid fa-location-dot"></i>
+            Negombo · Dambulla · Kandy · Nuwara Eliya · Ella · Yala · Galle · Ahungalla · Colombo
+          </p>
+          <ul class="card-highlights">
+            <li><i class="fa-solid fa-circle fa-fw"></i> Hiriwaduna Village Cultural Trek</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Ambuluwawa Tower &amp; Tea Plantations</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Kataragama Temple &amp; Yala Safari</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Galle Fort City Tour (UNESCO)</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> 3 Nights All-Inclusive at RIU Ahungalla</li>
+            <li><i class="fa-solid fa-circle fa-fw"></i> Colombo City &amp; The Kingsbury Hotel</li>
+          </ul>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">From</span>
+              <span class="price-value">USD 2,395 <span>/ person</span></span>
+            </div>
+            <a href="tour-15-day.html" class="view-btn">View Package</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── COMING SOON CARD ──
+           Duplicate and fill in when you add a new package.
+           To add a real package: copy one of the cards above,
+           update the content, and change href on the view-btn. -->
+      <div class="package-card coming-soon">
+        <div class="coming-soon-inner">
+          <i class="fa-regular fa-compass"></i>
+          <h3>More Coming Soon</h3>
+          <p>New tour packages are being prepared. Check back soon or get in touch to request a custom itinerary.</p>
+          <a href="index.html#contact" class="view-btn" style="margin-top:0.5rem;">Enquire Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       CTA BANNER
+  ══════════════════════════════ -->
+  <section class="packages-cta">
+    <!-- IMAGE: Update background-image in .packages-cta CSS with your preferred photo. -->
+    <h2>Can't Find What You're Looking For?</h2>
+    <a href="index.html#contact" class="cta-button">Request a Custom Package</a>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       CONTACT & FOOTER
+  ══════════════════════════════ -->
+  <section class="contact-section">
+    <h2>Get In Touch</h2>
+    <div class="contact-container">
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder=" " required />
+          <label for="name">Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder=" " required />
+          <label for="email">Email Address</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" placeholder=" " />
+          <label for="subject">Tour / Subject</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder=" "></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn">Send Enquiry</button>
+      </form>
+    </div>
+
+          <footer class="footer">
+        <div class="footer-column">
+          <h3>Nest Holidays Ceylon</h3>
+          <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <p>31 Outram St</p>
+              <p>Sutton-in-Ashfield</p>
+              <p>NG17 4BA</p>
+            </div>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <div>
+              <p>01623 553540</p>
+              <p>+447878O8772</p>
+            </div>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>nestholidaysceylon@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Office Hours</h3>
+          <div class="time-block">
+            <p>Monday to Friday</p>
+            <p>8:00 am to 5:00 pm</p>
+          </div>
+          <div class="time-block">
+            <p>Saturday</p>
+            <p>8:00 am to 5:00 pm</p>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Get Social</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61572519737574"
+              class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://x.com/NestHolidaysLK" class="social-icon"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/nestholidaysceylon/"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <a
+            href="https://www.instagram.com/nestholidaysceylon/"
+            class="follow-btn"
+            >Follow Us</a
+          >
+        </div>
+      </footer>
+  </section>
+
+</body>
+</html>

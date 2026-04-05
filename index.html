@@ -15,6 +15,36 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
+
+    <!-- NAVBAR -->
+     <!--
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="navbar-brand">Nest Holidays Ceylon</a>
+  <ul class="navbar-links">
+    <li><a href="#welcome">About Us</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="#contact" class="nav-book-btn">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+-->
+
+<!-- Mobile menu -->
+ <!--
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#welcome">About Us</a>
+  <a href="packages.html">Packages</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="#contact" class="mobile-book-btn">Book Now</a>
+</nav>
+-->
+
     <section class="hero">
       <div class="video-container">
         <!-- Video Background -->
@@ -73,6 +103,42 @@
       />
     </section>
 
+    <!-- PLACE THIS AFTER THE WELCOME SECTION AND BEFORE THE LOCATIONS SECTION -->
+
+
+
+<section class="packages-feature">
+  <div class="packages-feature-content">
+    <span class="packages-feature-tag">Curated Journeys</span>
+    <h2 class="packages-feature-title">Explore Our Sri Lanka<br>Tour Packages</h2>
+    <p class="packages-feature-desc">
+      From ancient UNESCO World Heritage Sites and mist-covered hill country
+      to golden beaches and thrilling wildlife safaris — our carefully crafted
+      packages cover the very best of the Pearl of the Indian Ocean.
+      Every detail arranged, every moment unforgettable.
+    </p>
+    <a href="packages.html" class="packages-feature-btn">
+      View All Packages &nbsp;<i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <div class="packages-feature-stats">
+    <div class="packages-stat">
+      <span class="packages-stat-number">13+</span>
+      <span class="packages-stat-label">Days of Adventure</span>
+    </div>
+    <div class="packages-stat">
+      <span class="packages-stat-number">8</span>
+      <span class="packages-stat-label">UNESCO Sites</span>
+    </div>
+    <div class="packages-stat">
+      <span class="packages-stat-number">100%</span>
+      <span class="packages-stat-label">Tailored for You</span>
+    </div>
+  </div>
+</section>
+
+
     <!-- Locations Section -->
     <section class="locations-section">
       <div class="location-card nilaveli">
@@ -87,9 +153,10 @@
           >see more <i class="fa-solid fa-chevron-right"></i
         ></a>
       </div>
-    </section>
+      </section>
 
     <section class="reviews-section">
+
       <h2>Reviews</h2>
       <div class="reviews-container">
         <div class="review-card">
@@ -230,5 +297,38 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="contact.js"></script>
+    <!--<script>
+        // Navbar shrinks on scroll
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 60);
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuOverlay = document.getElementById("menuOverlay");
+
+  function openMenu() {
+    hamburger.classList.add("open");
+    mobileMenu.classList.add("open");
+    menuOverlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    hamburger.classList.remove("open");
+    mobileMenu.classList.remove("open");
+    menuOverlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
+  });
+  menuOverlay.addEventListener("click", closeMenu);
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+    </script> -->
   </body>
 </html>
