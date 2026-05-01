@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("tMv98AAg_zStvKnb6"); // EmailJS public key
+  emailjs.init("UKbWUQAnsAcBvYYBP"); // EmailJS public key
 })();
 
 document
@@ -21,9 +21,10 @@ document
       message: document.getElementById("message").value,
     };
 
+    console.log('form data', formData)
     // First send to EmailJS
     emailjs
-      .send("service_90rv0cm", "template_qbz5rbc", formData)
+      .send("service_8zn2qso", "template_wj6loed", formData)
       .then(function (response) {
         // After EmailJS success, send to Google Sheets
         return fetch(
