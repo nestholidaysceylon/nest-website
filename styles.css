@@ -1193,147 +1193,314 @@ html {
 
 
 
-  /* ── NAVBAR ── */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 3rem;
-    background: transparent;
-    transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
-  }
-  .navbar.scrolled {
-    background: rgba(30, 15, 5, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 0.8rem 3rem;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  }
-  .navbar-brand {
-    font-family: "Italiana", serif;
-    font-size: 1.6rem;
-    color: #efdfbb;
-    text-decoration: none;
-    letter-spacing: 0.05em;
-  }
-  .navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .navbar-links a {
-    font-family: "Raleway", serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #efdfbb;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-  .navbar-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 1px;
-    background: #efdfbb;
-    transition: width 0.3s ease;
-  }
-  .navbar-links a:hover::after { width: 100%; }
-  .navbar-links .nav-book-btn {
-    background: rgba(239,223,187,0.15);
-    border: 1px solid #efdfbb;
-    border-radius: 50px;
-    padding: 0.5rem 1.4rem;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-  }
-  .navbar-links .nav-book-btn::after { display: none; }
-  .navbar-links .nav-book-btn:hover { background: #efdfbb; color: #392114; }
+/* ══════════════════════════════
+   NAVBAR
+══════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 4rem;
+  background: transparent;
+  transition: background 0.5s ease, padding 0.5s ease,
+              box-shadow 0.5s ease, backdrop-filter 0.5s ease;
+}
+.navbar.scrolled {
+  background: rgba(25, 12, 4, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.2rem 4rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(239,223,187,0.08);
+}
 
-  /* ── HAMBURGER ── */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0.3rem;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #efdfbb;
-    border-radius: 2px;
-    transition: all 0.35s ease;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* Brand / Logo */
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 0.1rem;
+}
+.navbar-brand-main {
+  font-family: "Italiana", serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #efdfbb;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+.navbar-brand-sub {
+  font-family: "Raleway", serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(239,223,187,0.55);
+  line-height: 1;
+}
+.navbar-brand:hover .navbar-brand-main { color: #fff; }
 
-  /* ── MOBILE MENU ── */
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 320px;
-    height: 100vh;
-    background: rgba(30,15,5,0.97);
-    backdrop-filter: blur(12px);
-    z-index: 999;
-    padding: 6rem 2.5rem 3rem;
-    gap: 2rem;
-    transition: right 0.4s ease;
-  }
-  .mobile-menu.open { right: 0; }
-  .mobile-menu a {
-    font-family: "Raleway", serif;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #efdfbb;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(239,223,187,0.15);
-    padding-bottom: 1.2rem;
-    transition: color 0.3s ease;
-  }
-  .mobile-menu a:hover { color: #fff; }
-  .mobile-menu .mobile-book-btn {
-    margin-top: auto;
-    text-align: center;
-    background: #efdfbb;
-    color: #392114 !important;
-    border-radius: 8px;
-    padding: 1rem;
-    font-weight: 700;
-    border-bottom: none;
-  }
-  .menu-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 998;
-  }
-  .menu-overlay.open { display: block; }
+/* Desktop Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.navbar-links li a {
+  font-family: "Raleway", serif;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(239,223,187,0.85);
+  text-decoration: none;
+  border-radius: 6px;
+  position: relative;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+.navbar-links li a:hover {
+  color: #fff;
+  background: rgba(239,223,187,0.08);
+}
+.navbar-links li a.active {
+  color: #efdfbb;
+}
+.navbar-links li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 1.5px;
+  background: #efdfbb;
+  border-radius: 2px;
+}
 
+/* Book Now button */
+.navbar-links li a.nav-book-btn {
+  background: rgba(239, 223, 187, 0.15);
+  color: #efdfbb;
+  border: 1px solid rgba(239, 223, 187, 0.45);
+  border-radius: 8px;
+  padding: 0.65rem 1.8rem;
+  font-weight: 800;
+  margin-left: 0.8rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.12em;
+  backdrop-filter: blur(4px);
+}
+.navbar-links li a.nav-book-btn:hover {
+  background: #fff;
+  color: #392114;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.navbar-links li a.nav-book-btn::after { display: none; }
+
+/* Divider between links and book btn */
+.navbar-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(239,223,187,0.2);
+  margin: 0 0.5rem;
+}
+
+/* ══════════════════════════════
+   HAMBURGER — MOBILE
+══════════════════════════════ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  background: rgba(239,223,187,0.08);
+  border: 1px solid rgba(239,223,187,0.18);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  transition: background 0.3s ease;
+}
+.hamburger:hover {
+  background: rgba(239,223,187,0.15);
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: #efdfbb;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0; transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ══════════════════════════════
+   MOBILE MENU
+══════════════════════════════ */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.menu-overlay.open {
+  display: block;
+  opacity: 1;
+}
+.mobile-menu {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 80%; max-width: 340px;
+  height: 100vh;
+  background: #1a0c04;
+  border-left: 1px solid rgba(239,223,187,0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+.mobile-menu.open { right: 0; }
+
+/* Mobile menu header */
+.mobile-menu-header {
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1px solid rgba(239,223,187,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-menu-brand {
+  font-family: "Italiana", serif;
+  font-size: 1.5rem;
+  color: #efdfbb;
+  letter-spacing: 0.05em;
+}
+.mobile-close {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(239,223,187,0.08);
+  border: 1px solid rgba(239,223,187,0.15);
+  color: #efdfbb;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+.mobile-close:hover { background: rgba(239,223,187,0.15); }
+
+/* Mobile nav links */
+.mobile-nav-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+}
+.mobile-nav-links a {
+  font-family: "Raleway", serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(239,223,187,0.75);
+  text-decoration: none;
+  padding: 1.1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: color 0.3s ease, background 0.3s ease;
+  border-left: 2px solid transparent;
+}
+.mobile-nav-links a:hover {
+  color: #efdfbb;
+  background: rgba(239,223,187,0.05);
+  border-left-color: rgba(239,223,187,0.3);
+}
+.mobile-nav-links a.active {
+  color: #efdfbb;
+  border-left-color: #efdfbb;
+}
+.mobile-nav-links a i {
+  width: 18px;
+  text-align: center;
+  color: rgba(239,223,187,0.4);
+  font-size: 0.85rem;
+}
+.mobile-nav-links a:hover i,
+.mobile-nav-links a.active i {
+  color: rgba(239,223,187,0.7);
+}
+.mobile-nav-divider {
+  height: 1px;
+  background: rgba(239,223,187,0.08);
+  margin: 0.5rem 2rem;
+}
+
+/* Mobile Book Now button */
+.mobile-menu-footer {
+  padding: 1.5rem 2rem 2.5rem;
+  border-top: 1px solid rgba(239,223,187,0.1);
+}
+.mobile-book-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "Raleway", serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #392114;
+  background: #efdfbb;
+  padding: 1.1rem 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.mobile-book-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 1024px) {
+  .navbar { padding: 1.6rem 2.5rem; }
+  .navbar.scrolled { padding: 1.1rem 2.5rem; }
+}
+@media (max-width: 900px) {
+  .navbar-links, .navbar-divider { display: none; }
+  .hamburger { display: flex; }
+  .navbar { padding: 1.4rem 1.5rem; }
+  .navbar.scrolled { padding: 1rem 1.5rem; }
+  .navbar-brand-main { font-size: 1.6rem; }
+}
+@media (max-width: 480px) {
+  .navbar-brand-main { font-size: 1.4rem; }
+}
   /* ── PACKAGES CARD ── */
   .packages-card {
     background-image: url("assets/images/packages-bg.jpg");
