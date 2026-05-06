@@ -1,395 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nest Holidays Ceylon</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
 
-   
-<a href="https://wa.me/447564903057" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-  <i class="fab fa-whatsapp"></i>
-</a>
-<style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nest Holidays Ceylon</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+
+  <a href="https://wa.me/447564903057" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <style>
     /* ══════════════════════════════
    NAVBAR
 ══════════════════════════════ */
-.navbar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.8rem 4rem;
-  background: transparent;
-  transition: background 0.5s ease, padding 0.5s ease,
-              box-shadow 0.5s ease, backdrop-filter 0.5s ease;
-}
-.navbar.scrolled {
-  background: rgba(25, 12, 4, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 1.2rem 4rem;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.35);
-  border-bottom: 1px solid rgba(239,223,187,0.08);
-}
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.8rem 4rem;
+      background: transparent;
+      transition: background 0.5s ease, padding 0.5s ease,
+        box-shadow 0.5s ease, backdrop-filter 0.5s ease;
+    }
 
-/* Brand / Logo */
-.navbar-brand {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  gap: 0.1rem;
-}
-.navbar-brand-main {
-  font-family: "Italiana", serif;
-  font-size: 1.9rem;
-  font-weight: 400;
-  color: #efdfbb;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  transition: color 0.3s ease;
-}
-.navbar-brand-sub {
-  font-family: "Raleway", serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba(239,223,187,0.55);
-  line-height: 1;
-}
-.navbar-brand:hover .navbar-brand-main { color: #fff; }
+    .navbar.scrolled {
+      background: rgba(25, 12, 4, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.2rem 4rem;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+      border-bottom: 1px solid rgba(239, 223, 187, 0.08);
+    }
 
-/* Desktop Links */
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0; padding: 0;
-}
-.navbar-links li a {
-  font-family: "Raleway", serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(239,223,187,0.85);
-  text-decoration: none;
-  padding: 0.55rem 1.1rem;
-  border-radius: 6px;
-  position: relative;
-  transition: color 0.3s ease, background 0.3s ease;
-}
-.navbar-links li a:hover {
-  color: #fff;
-  background: rgba(239,223,187,0.08);
-}
-.navbar-links li a.active {
-  color: #efdfbb;
-}
-.navbar-links li a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 1.1rem;
-  right: 1.1rem;
-  height: 1.5px;
-  background: #efdfbb;
-  border-radius: 2px;
-}
+    /* Brand / Logo */
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 0.1rem;
+    }
 
-/* Book Now button */
-.navbar-links li a.nav-book-btn {
-  background: #efdfbb;
-  color: #392114;
-  border-radius: 8px;
-  padding: 0.65rem 1.8rem;
-  font-weight: 800;
-  margin-left: 0.8rem;
-  transition: all 0.3s ease;
-  letter-spacing: 0.12em;
-}
-.navbar-links li a.nav-book-btn:hover {
-  background: #fff;
-  color: #392114;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-.navbar-links li a.nav-book-btn::after { display: none; }
+    .navbar-brand-main {
+      font-family: "Italiana", serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: #efdfbb;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
 
-/* Divider between links and book btn */
-.navbar-divider {
-  width: 1px;
-  height: 20px;
-  background: rgba(239,223,187,0.2);
-  margin: 0 0.5rem;
-}
+    .navbar-brand-sub {
+      font-family: "Raleway", serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(239, 223, 187, 0.55);
+      line-height: 1;
+    }
 
-/* ══════════════════════════════
+    .navbar-brand:hover .navbar-brand-main {
+      color: #fff;
+    }
+
+    /* Desktop Links */
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links li a {
+      font-family: "Raleway", serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(239, 223, 187, 0.85);
+      text-decoration: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      position: relative;
+      transition: color 0.3s ease, background 0.3s ease;
+    }
+
+    .navbar-links li a:hover {
+      color: #fff;
+      background: rgba(239, 223, 187, 0.08);
+    }
+
+    .navbar-links li a.active {
+      color: #efdfbb;
+    }
+
+    .navbar-links li a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 1.1rem;
+      right: 1.1rem;
+      height: 1.5px;
+      background: #efdfbb;
+      border-radius: 2px;
+    }
+
+    /* Book Now button */
+    .navbar-links li a.nav-book-btn {
+      background: #efdfbb;
+      color: #392114;
+      border-radius: 8px;
+      padding: 0.65rem 1.8rem;
+      font-weight: 800;
+      margin-left: 0.8rem;
+      transition: all 0.3s ease;
+      letter-spacing: 0.12em;
+    }
+
+    .navbar-links li a.nav-book-btn:hover {
+      background: #fff;
+      color: #392114;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-links li a.nav-book-btn::after {
+      display: none;
+    }
+
+    /* Divider between links and book btn */
+    .navbar-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(239, 223, 187, 0.2);
+      margin: 0 0.5rem;
+    }
+
+    /* ══════════════════════════════
    HAMBURGER — MOBILE
 ══════════════════════════════ */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  background: rgba(239,223,187,0.08);
-  border: 1px solid rgba(239,223,187,0.18);
-  border-radius: 8px;
-  padding: 0.6rem 0.75rem;
-  transition: background 0.3s ease;
-}
-.hamburger:hover {
-  background: rgba(239,223,187,0.15);
-}
-.hamburger span {
-  display: block;
-  width: 22px; height: 1.5px;
-  background: #efdfbb;
-  border-radius: 2px;
-  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-  transform-origin: center;
-}
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0; transform: scaleX(0);
-}
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
-}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      background: rgba(239, 223, 187, 0.08);
+      border: 1px solid rgba(239, 223, 187, 0.18);
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+      transition: background 0.3s ease;
+    }
 
-/* ══════════════════════════════
+    .hamburger:hover {
+      background: rgba(239, 223, 187, 0.15);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: #efdfbb;
+      border-radius: 2px;
+      transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* ══════════════════════════════
    MOBILE MENU
 ══════════════════════════════ */
-.menu-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(3px);
-  z-index: 998;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.menu-overlay.open {
-  display: block;
-  opacity: 1;
-}
-.mobile-menu {
-  position: fixed;
-  top: 0; right: -100%;
-  width: 80%; max-width: 340px;
-  height: 100vh;
-  background: #1a0c04;
-  border-left: 1px solid rgba(239,223,187,0.1);
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
-}
-.mobile-menu.open { right: 0; }
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(3px);
+      z-index: 998;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
 
-/* Mobile menu header */
-.mobile-menu-header {
-  padding: 2rem 2rem 1.5rem;
-  border-bottom: 1px solid rgba(239,223,187,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.mobile-menu-brand {
-  font-family: "Italiana", serif;
-  font-size: 1.5rem;
-  color: #efdfbb;
-  letter-spacing: 0.05em;
-}
-.mobile-close {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  background: rgba(239,223,187,0.08);
-  border: 1px solid rgba(239,223,187,0.15);
-  color: #efdfbb;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-.mobile-close:hover { background: rgba(239,223,187,0.15); }
+    .menu-overlay.open {
+      display: block;
+      opacity: 1;
+    }
 
-/* Mobile nav links */
-.mobile-nav-links {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem 0;
-  overflow-y: auto;
-}
-.mobile-nav-links a {
-  font-family: "Raleway", serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(239,223,187,0.75);
-  text-decoration: none;
-  padding: 1.1rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: color 0.3s ease, background 0.3s ease;
-  border-left: 2px solid transparent;
-}
-.mobile-nav-links a:hover {
-  color: #efdfbb;
-  background: rgba(239,223,187,0.05);
-  border-left-color: rgba(239,223,187,0.3);
-}
-.mobile-nav-links a.active {
-  color: #efdfbb;
-  border-left-color: #efdfbb;
-}
-.mobile-nav-links a i {
-  width: 18px;
-  text-align: center;
-  color: rgba(239,223,187,0.4);
-  font-size: 0.85rem;
-}
-.mobile-nav-links a:hover i,
-.mobile-nav-links a.active i {
-  color: rgba(239,223,187,0.7);
-}
-.mobile-nav-divider {
-  height: 1px;
-  background: rgba(239,223,187,0.08);
-  margin: 0.5rem 2rem;
-}
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 340px;
+      height: 100vh;
+      background: #1a0c04;
+      border-left: 1px solid rgba(239, 223, 187, 0.1);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+    }
 
-/* Mobile Book Now button */
-.mobile-menu-footer {
-  padding: 1.5rem 2rem 2.5rem;
-  border-top: 1px solid rgba(239,223,187,0.1);
-}
-.mobile-book-btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-family: "Raleway", serif;
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #392114;
-  background: #efdfbb;
-  padding: 1.1rem 2rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-.mobile-book-btn:hover {
-  background: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
+    .mobile-menu.open {
+      right: 0;
+    }
 
-/* ══════════════════════════════
+    /* Mobile menu header */
+    .mobile-menu-header {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid rgba(239, 223, 187, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-menu-brand {
+      font-family: "Italiana", serif;
+      font-size: 1.5rem;
+      color: #efdfbb;
+      letter-spacing: 0.05em;
+    }
+
+    .mobile-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(239, 223, 187, 0.08);
+      border: 1px solid rgba(239, 223, 187, 0.15);
+      color: #efdfbb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .mobile-close:hover {
+      background: rgba(239, 223, 187, 0.15);
+    }
+
+    /* Mobile nav links */
+    .mobile-nav-links {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 0;
+      overflow-y: auto;
+    }
+
+    .mobile-nav-links a {
+      font-family: "Raleway", serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(239, 223, 187, 0.75);
+      text-decoration: none;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.3s ease, background 0.3s ease;
+      border-left: 2px solid transparent;
+    }
+
+    .mobile-nav-links a:hover {
+      color: #efdfbb;
+      background: rgba(239, 223, 187, 0.05);
+      border-left-color: rgba(239, 223, 187, 0.3);
+    }
+
+    .mobile-nav-links a.active {
+      color: #efdfbb;
+      border-left-color: #efdfbb;
+    }
+
+    .mobile-nav-links a i {
+      width: 18px;
+      text-align: center;
+      color: rgba(239, 223, 187, 0.4);
+      font-size: 0.85rem;
+    }
+
+    .mobile-nav-links a:hover i,
+    .mobile-nav-links a.active i {
+      color: rgba(239, 223, 187, 0.7);
+    }
+
+    .mobile-nav-divider {
+      height: 1px;
+      background: rgba(239, 223, 187, 0.08);
+      margin: 0.5rem 2rem;
+    }
+
+    /* Mobile Book Now button */
+    .mobile-menu-footer {
+      padding: 1.5rem 2rem 2.5rem;
+      border-top: 1px solid rgba(239, 223, 187, 0.1);
+    }
+
+    .mobile-book-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-family: "Raleway", serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #392114;
+      background: #efdfbb;
+      padding: 1.1rem 2rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-book-btn:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ══════════════════════════════
    RESPONSIVE
 ══════════════════════════════ */
-@media (max-width: 1024px) {
-  .navbar { padding: 1.6rem 2.5rem; }
-  .navbar.scrolled { padding: 1.1rem 2.5rem; }
-}
-@media (max-width: 900px) {
-  .navbar-links, .navbar-divider { display: none; }
-  .hamburger { display: flex; }
-  .navbar { padding: 1.4rem 1.5rem; }
-  .navbar.scrolled { padding: 1rem 1.5rem; }
-  .navbar-brand-main { font-size: 1.6rem; }
-}
-@media (max-width: 480px) {
-  .navbar-brand-main { font-size: 1.4rem; }
-}
-</style> 
+    @media (max-width: 1024px) {
+      .navbar {
+        padding: 1.6rem 2.5rem;
+      }
+
+      .navbar.scrolled {
+        padding: 1.1rem 2.5rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .navbar-links,
+      .navbar-divider {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .navbar {
+        padding: 1.4rem 1.5rem;
+      }
+
+      .navbar.scrolled {
+        padding: 1rem 1.5rem;
+      }
+
+      .navbar-brand-main {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-brand-main {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 
 </head>
-  
-  <body>
 
-<!-- ══════════════════════════════
+<body>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const welcomeSection = document.getElementById("welcome");
+      const welcomeTop = welcomeSection.offsetTop;
+
+      if (window.scrollY >= welcomeTop - 100) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+  <!-- ══════════════════════════════
      NAVBAR
 ══════════════════════════════ -->
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
 
-  <a href="index.html" class="navbar-brand">
-    <span class="navbar-brand-main">Nest Holidays Ceylon</span>
-    <span class="navbar-brand-sub">Sri Lanka Travel Specialists</span>
-  </a>
+    <a href="index.html" class="navbar-brand">
+      <span class="navbar-brand-main">Nest Holidays Ceylon</span>
+      <span class="navbar-brand-sub">Sri Lanka Travel Specialists</span>
+    </a>
 
-  <ul class="navbar-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="packages.html">Packages</a></li>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <div class="navbar-divider"></div>
-    <li><a href="index.html#contact" class="nav-book-btn">Book Now</a></li>
-  </ul>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+      <div class="navbar-divider"></div>
+      <li><a href="index.html#contact" class="nav-book-btn">Book Now</a></li>
+    </ul>
 
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-
-</nav>
-
-<!-- Mobile overlay -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<!-- Mobile slide-in menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-header">
-    <span class="mobile-menu-brand">Nest Holidays</span>
-    <button class="mobile-close" id="mobileClose">
-      <i class="fa-solid fa-xmark"></i>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
     </button>
-  </div>
 
-  <nav class="mobile-nav-links">
-    <a href="index.html">
-      <i class="fa-solid fa-house"></i> Home
-    </a>
-    <a href="about.html">
-      <i class="fa-solid fa-circle-info"></i> About Us
-    </a>
-    <a href="packages.html">
-      <i class="fa-solid fa-map"></i> Packages
-    </a>
-    <div class="mobile-nav-divider"></div>
-    <a href="privacy-policy.html">
-      <i class="fa-solid fa-shield-halved"></i> Privacy Policy
-    </a>
   </nav>
 
-  <div class="mobile-menu-footer">
-    <a href="index.html#contact" class="mobile-book-btn">Book Now</a>
-  </div>
-</div>
+  <!-- Mobile overlay -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-    <section class="hero">
+  <!-- Mobile slide-in menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-brand">Nest Holidays</span>
+      <button class="mobile-close" id="mobileClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+      <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i> About Us
+      </a>
+      <a href="packages.html">
+        <i class="fa-solid fa-map"></i> Packages
+      </a>
+      <div class="mobile-nav-divider"></div>
+      <a href="privacy-policy.html">
+        <i class="fa-solid fa-shield-halved"></i> Privacy Policy
+      </a>
+    </nav>
+
+    <div class="mobile-menu-footer">
+      <a href="index.html#contact" class="mobile-book-btn">Book Now</a>
+    </div>
+  </div>
+
+  <section class="hero">
     <div class="video-container">
       <!-- Video Background -->
       <video autoplay muted loop playsinline id="hero-video" poster="/api/placeholder/1920/1080">
@@ -402,176 +484,147 @@
       <div class="overlay"></div>
     </div>
 
-      <!-- Existing hero content -->
-  
-      <img
-        src="assets/images/lotus-logo.svg"
-        alt="Nest Holidays Logo"
-        class="logo"
-      />
-      <p class="welcome-text">WELCOME TO</p>
-      <h1 class="hotel-name">Nest Holidays</h1>
-      <p class="hotel-type">RESORT & SPA HOTEL</p>
-      <a href="#welcome" class="cta-button">Learn More</a>
-    </section>
+    <!-- Existing hero content -->
 
-    <section class="welcome-section" id="welcome">
-      <div class="welcome-content">
-        <h2 class="welcome-title">
-          Welcome to your luxurious home away from home
-        </h2>
-        <p class="welcome-description">
-          Welcome to a luxurious escape in Sri Lanka, where the stunning shores
-          of Galle and Nilaveli offer a perfect blend of comfort and serenity.
-          In Galle, the hotel combines colonial charm with modern elegance,
-          featuring teak floors, antique furnishings, and lush gardens. The
-          infinity pool offers breathtaking views of the Indian Ocean, while
-          private terraces provide a peaceful retreat. In Nilaveli, minimalist
-          design and natural elements create a tranquil beachside haven, with
-          pristine sands and spectacular sunsets. Experience world-class
-          hospitality, rejuvenating spa treatments, and unforgettable local
-          excursions in this coastal paradise.
+    <img src="assets/images/lotus-logo.svg" alt="Nest Holidays Logo" class="logo" />
+    <p class="welcome-text">WELCOME TO</p>
+    <h1 class="hotel-name">Nest Holidays</h1>
+    <p class="hotel-type">RESORT & SPA HOTEL</p>
+    <a href="#welcome" class="cta-button">Learn More</a>
+  </section>
+
+  <section class="welcome-section" id="welcome">
+    <div class="welcome-content">
+      <h2 class="welcome-title">
+        Welcome to your luxurious home away from home
+      </h2>
+      <p class="welcome-description">
+        Welcome to a luxurious escape in Sri Lanka, where the stunning shores
+        of Galle and Nilaveli offer a perfect blend of comfort and serenity.
+        In Galle, the hotel combines colonial charm with modern elegance,
+        featuring teak floors, antique furnishings, and lush gardens. The
+        infinity pool offers breathtaking views of the Indian Ocean, while
+        private terraces provide a peaceful retreat. In Nilaveli, minimalist
+        design and natural elements create a tranquil beachside haven, with
+        pristine sands and spectacular sunsets. Experience world-class
+        hospitality, rejuvenating spa treatments, and unforgettable local
+        excursions in this coastal paradise.
+      </p>
+    </div>
+    <img src="assets/images/image-family.jpg" alt="Family enjoying tea at resort" class="welcome-image" />
+  </section>
+
+  <!-- PLACE THIS AFTER THE WELCOME SECTION AND BEFORE THE LOCATIONS SECTION -->
+
+
+
+  <section class="packages-feature">
+    <div class="packages-feature-content">
+      <span class="packages-feature-tag">Curated Journeys</span>
+      <h2 class="packages-feature-title">Explore Our Sri Lanka<br>Tour Packages</h2>
+      <p class="packages-feature-desc">
+        From ancient UNESCO World Heritage Sites and mist-covered hill country
+        to golden beaches and thrilling wildlife safaris — our carefully crafted
+        packages cover the very best of the Pearl of the Indian Ocean.
+        Every detail arranged, every moment unforgettable.
+      </p>
+      <a href="packages.html" class="packages-feature-btn">
+        View All Packages &nbsp;<i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="packages-feature-stats">
+      <div class="packages-stat">
+        <span class="packages-stat-number">13+</span>
+        <span class="packages-stat-label">Days of Adventure</span>
+      </div>
+      <div class="packages-stat">
+        <span class="packages-stat-number">8</span>
+        <span class="packages-stat-label">UNESCO Sites</span>
+      </div>
+      <div class="packages-stat">
+        <span class="packages-stat-number">100%</span>
+        <span class="packages-stat-label">Tailored for You</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Locations Section -->
+  <section class="locations-section">
+    <div class="location-card nilaveli">
+      <h2>NILAVELI</h2>
+      <a href="nilaveli.html" class="see-more">see more <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="location-card galle">
+      <h2>GALLE</h2>
+      <a href="galle.html" class="see-more">see more <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+
+    <h2>Reviews</h2>
+    <div class="reviews-container">
+      <div class="review-card">
+        <p class="review-text">
+          Nilaveli Hotel offers a stunning location, stylish rooms, and
+          exceptional service. The fresh seafood, breathtaking views, and
+          peaceful atmosphere make it the perfect getaway. Highly recommended!
         </p>
+        <p class="reviewer">Santa Solana</p>
       </div>
-      <img
-        src="assets/images/image-family.jpg"
-        alt="Family enjoying tea at resort"
-        class="welcome-image"
-      />
-    </section>
 
-    <!-- PLACE THIS AFTER THE WELCOME SECTION AND BEFORE THE LOCATIONS SECTION -->
-
-
-
-<section class="packages-feature">
-  <div class="packages-feature-content">
-    <span class="packages-feature-tag">Curated Journeys</span>
-    <h2 class="packages-feature-title">Explore Our Sri Lanka<br>Tour Packages</h2>
-    <p class="packages-feature-desc">
-      From ancient UNESCO World Heritage Sites and mist-covered hill country
-      to golden beaches and thrilling wildlife safaris — our carefully crafted
-      packages cover the very best of the Pearl of the Indian Ocean.
-      Every detail arranged, every moment unforgettable.
-    </p>
-    <a href="packages.html" class="packages-feature-btn">
-      View All Packages &nbsp;<i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-
-  <div class="packages-feature-stats">
-    <div class="packages-stat">
-      <span class="packages-stat-number">13+</span>
-      <span class="packages-stat-label">Days of Adventure</span>
-    </div>
-    <div class="packages-stat">
-      <span class="packages-stat-number">8</span>
-      <span class="packages-stat-label">UNESCO Sites</span>
-    </div>
-    <div class="packages-stat">
-      <span class="packages-stat-number">100%</span>
-      <span class="packages-stat-label">Tailored for You</span>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Locations Section -->
-    <section class="locations-section">
-      <div class="location-card nilaveli">
-        <h2>NILAVELI</h2>
-        <a href="nilaveli.html" class="see-more"
-          >see more <i class="fa-solid fa-chevron-right"></i
-        ></a>
+      <div class="review-card featured">
+        <p class="review-text">
+          Nilaveli Hotel is a true gem, with beautiful beachfront views,
+          spacious rooms, and excellent service. The fresh seafood and
+          relaxing atmosphere make it an ideal escape. Highly recommended!
+        </p>
+        <p class="reviewer">Mariana's Luxe Travels</p>
       </div>
-      <div class="location-card galle">
-        <h2>GALLE</h2>
-        <a href="galle.html" class="see-more"
-          >see more <i class="fa-solid fa-chevron-right"></i
-        ></a>
+
+      <div class="review-card">
+        <p class="review-text">
+          Galle blends history and beauty, with colonial-style rooms and
+          stunning ocean views. The hotel offers a relaxing atmosphere,
+          excellent food, and a perfect location for exploring.
+        </p>
+        <p class="reviewer">Fairhill Journal</p>
       </div>
-      </section>
+    </div>
+  </section>
 
-    <section class="reviews-section">
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
 
-      <h2>Reviews</h2>
-      <div class="reviews-container">
-        <div class="review-card">
-          <p class="review-text">
-            Nilaveli Hotel offers a stunning location, stylish rooms, and
-            exceptional service. The fresh seafood, breathtaking views, and
-            peaceful atmosphere make it the perfect getaway. Highly recommended!
-          </p>
-          <p class="reviewer">Santa Solana</p>
+    <div class="contact-container">
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder=" " required />
+          <label for="name">Full Name</label>
         </div>
 
-        <div class="review-card featured">
-          <p class="review-text">
-            Nilaveli Hotel is a true gem, with beautiful beachfront views,
-            spacious rooms, and excellent service. The fresh seafood and
-            relaxing atmosphere make it an ideal escape. Highly recommended!
-          </p>
-          <p class="reviewer">Mariana's Luxe Travels</p>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">Email Address</label>
         </div>
 
-        <div class="review-card">
-          <p class="review-text">
-            Galle blends history and beauty, with colonial-style rooms and
-            stunning ocean views. The hotel offers a relaxing atmosphere,
-            excellent food, and a perfect location for exploring.
-          </p>
-          <p class="reviewer">Fairhill Journal</p>
+        <div class="form-group">
+          <input type="tel" id="phone" name="phone" placeholder=" " required />
+          <label for="phone">Phone Number</label>
         </div>
-      </div>
-    </section>
 
-    <section class="contact-section" id="contact">
-      <h2>Contact Us</h2>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder=" " required></textarea>
+          <label for="message">Your Message</label>
+        </div>
 
-      <div class="contact-container">
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder=" " required />
-            <label for="name">Full Name</label>
-          </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
 
-          <div class="form-group">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder=" "
-              required
-            />
-            <label for="email">Email Address</label>
-          </div>
-
-          <div class="form-group">
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder=" "
-              required
-            />
-            <label for="phone">Phone Number</label>
-          </div>
-
-          <div class="form-group">
-            <textarea
-              id="message"
-              name="message"
-              placeholder=" "
-              required
-            ></textarea>
-            <label for="message">Your Message</label>
-          </div>
-
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-
-      <footer class="footer">
+    <footer class="footer">
       <div class="footer-column">
         <h3>Nest Holidays Ceylon</h3>
         <div class="contact-info">
@@ -626,51 +679,58 @@
       </div>
 
     </footer>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="contact.js"></script>
-    <script>
-  // Navbar darkens on scroll
-  const navbar = document.getElementById("navbar");
-  window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 60);
-  });
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="contact.js"></script>
 
-  // Mobile menu open/close
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const menuOverlay = document.getElementById("menuOverlay");
-  const mobileClose = document.getElementById("mobileClose");
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById("navbar");
 
-  function openMenu() {
-    hamburger.classList.add("open");
-    mobileMenu.classList.add("open");
-    menuOverlay.classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
-  function closeMenu() {
-    hamburger.classList.remove("open");
-    mobileMenu.classList.remove("open");
-    menuOverlay.classList.remove("open");
-    document.body.style.overflow = "";
-  }
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 60);
+    });
 
-  hamburger.addEventListener("click", openMenu);
-  mobileClose.addEventListener("click", closeMenu);
-  menuOverlay.addEventListener("click", closeMenu);
-  document.querySelectorAll(".mobile-nav-links a, .mobile-book-btn")
-    .forEach(link => link.addEventListener("click", closeMenu));
+    // Mobile Menu Functionality
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const mobileClose = document.getElementById("mobileClose");
 
-  // Highlight active page link
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".navbar-links a, .mobile-nav-links a").forEach(link => {
-    const linkPage = link.getAttribute("href").split("/").pop().split("#")[0];
-    if (linkPage === currentPage) link.classList.add("active");
-  });
+    function openMenu() {
+      hamburger.classList.add("open");
+      mobileMenu.classList.add("open");
+      menuOverlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
 
-  <a href="https://wa.me/447564903057" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</script>
-  </body>
+    function closeMenu() {
+      hamburger.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      menuOverlay.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    // Event Listeners
+    hamburger.addEventListener("click", openMenu);
+    mobileClose.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+
+    // Close menu when clicking on mobile nav links
+    document.querySelectorAll(".mobile-nav-links a, .mobile-book-btn")
+      .forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+    // Highlight active page
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".navbar-links a, .mobile-nav-links a").forEach(link => {
+      const linkPage = link.getAttribute("href").split("/").pop().split("#")[0];
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+
 </html>
