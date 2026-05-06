@@ -1723,8 +1723,8 @@ html {
 }
 
 .last-updated {
-  text-align: center;
+  text-align: left;
   color: #666;
   font-style: italic;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
