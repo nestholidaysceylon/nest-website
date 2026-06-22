@@ -1679,6 +1679,43 @@ html {
   }
 }
 
+.policy-page {
+  min-height: 100vh;
+  padding: 6rem 1rem 3rem;
+  background: #f8f2e5;
+}
+
+.policy-home-link {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(71, 50, 1, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 251, 244, 0.96);
+  box-shadow: 0 8px 24px rgba(57, 33, 20, 0.12);
+  color: #392114;
+  font-family: "Raleway", serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.policy-home-link:hover {
+  background: #392114;
+  color: #efdfbb;
+  box-shadow: 0 10px 28px rgba(57, 33, 20, 0.2);
+  transform: translateY(-1px);
+}
+
 .policy-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -1726,4 +1763,21 @@ html {
   color: #666;
   font-style: italic;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .policy-page {
+    padding-top: 5.25rem;
+  }
+
+  .policy-home-link {
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.76rem;
+  }
+
+  .policy-container {
+    padding: 3rem 1.25rem;
+  }
 }
